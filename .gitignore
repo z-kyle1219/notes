@@ -1,0 +1,12 @@
+# 临时文件
+_probe.txt
+*.tmp
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+*.swp

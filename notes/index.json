@@ -1,0 +1,60 @@
+{
+  "title": "LeetCode 笔记本",
+  "groups": [
+    {
+      "title": "入门",
+      "items": [
+        {
+          "id": "how-to-practice",
+          "num": "01",
+          "title": "第一次刷题，先搞清楚三件事",
+          "file": "notes/01-how-to-practice.md",
+          "difficulty": null
+        },
+        {
+          "id": "complexity",
+          "num": "02",
+          "title": "复杂度分析：够用就好的版本",
+          "file": "notes/02-complexity.md",
+          "difficulty": null
+        }
+      ]
+    },
+    {
+      "title": "哈希表 · 数组",
+      "items": [
+        {
+          "id": "lc1",
+          "num": "0001",
+          "title": "两数之和",
+          "file": "notes/lc-0001-two-sum.md",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "title": "栈",
+      "items": [
+        {
+          "id": "lc20",
+          "num": "0020",
+          "title": "有效的括号",
+          "file": "notes/lc-0020-valid-parentheses.md",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
+      "title": "二分查找",
+      "items": [
+        {
+          "id": "lc704",
+          "num": "0704",
+          "title": "二分查找",
+          "file": "notes/lc-0704-binary-search.md",
+          "difficulty": "easy"
+        }
+      ]
+    }
+  ]
+}
