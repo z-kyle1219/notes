@@ -1,5 +1,7 @@
 # LeetCode 笔记本
 
+**在线地址：[https://z-kyle1219.github.io/leetcode/](https://z-kyle1219.github.io/leetcode/)**
+
 一个自己用的代码复习站：Markdown 写笔记，浏览器里读，推到 GitHub 就是公开网页。
 
 - 左侧目录、右侧正文，支持**全文搜索**（按 `/` 直接唤起）
@@ -12,17 +14,9 @@
 
 ## 一、本地预览
 
-双击 **`start.ps1`**（右键 → 使用 PowerShell 运行）。它会启动一个本地服务并自动打开浏览器。
+双击 **`start.ps1`**（右键 → 使用 PowerShell 运行），浏览器会自动打开预览页；改完 md 刷新即可看到最新内容。
 
-> 为什么要起服务？浏览器出于安全限制，不允许 `file://` 页面读取本地 `.md` 文件。直接双击 `index.html` 会看到「读不到这个文件」的提示。
-
-手动启动也可以：
-
-```powershell
-cd D:\leetcode
-python -m http.server 8080
-# 然后浏览器打开 http://localhost:8080/
-```
+> 别直接双击 `index.html`：浏览器不允许 `file://` 页面读取本地 `.md`，会提示读不到笔记。
 
 ## 二、目录结构
 
@@ -41,7 +35,9 @@ D:\leetcode\
 │  ├─ lc-0020-valid-parentheses.md
 │  └─ lc-0704-binary-search.md
 ├─ start.ps1             本地预览
-└─ new-note.ps1          新建笔记
+├─ new-note.ps1          新建笔记
+├─ .nojekyll             告诉 GitHub Pages 别走 Jekyll 处理（别删）
+└─ README.md             就是本文件
 ```
 
 ## 三、新增一篇笔记
@@ -80,16 +76,28 @@ subtitle: LeetCode 15
 
 `id` 是 URL 里用的短标识，全站唯一；`file` 是相对 `index.html` 的路径。
 
-## 四、发布到 GitHub Pages
+## 四、发布与更新（已上线）
+
+站点已经托管在 GitHub Pages 上：
+
+| | |
+|---|---|
+| 在线地址 | https://z-kyle1219.github.io/leetcode/ |
+| 源码仓库 | https://github.com/z-kyle1219/leetcode |
+| 发布分支 | `main`，目录 `/ (root)` |
+
+**日常更新就是三步**——改完笔记和 `notes\index.json` 后提交推送，Pages 会自动重新构建，一两分钟后线上就是新的：
 
 ```powershell
-git remote add origin https://github.com/你的用户名/leetcode.git
-git push -u origin main
+cd D:\leetcode
+git add .
+git commit -m "note: 新增 xxx"
+git push
 ```
 
-然后在仓库页面 → **Settings** → **Pages** → Source 选 `Deploy from a branch` → 分支选 `main`、目录选 `/ (root)` → Save。
+> 推送后先在本地 `start.ps1` 预览确认没问题，再 push；线上构建有缓存，看不到改动时用 `Ctrl+F5` 强刷一下。
 
-等一两分钟，访问 `https://你的用户名.github.io/leetcode/`。
+配置项（已完成，只有换仓库/换账号时才需要重做）：仓库 **Settings** → **Pages** → Source 选 `Deploy from a branch` → 分支 `main`、目录 `/ (root)` → Save。
 
 > ⚠️ 私有仓库要发 Pages 需要 GitHub Pro，免费账号请把仓库设为 Public。
 
