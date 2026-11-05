@@ -259,7 +259,62 @@
     }
 
     setCrumb(item);
+    setupToc();
+    setupZoom();
     setupReveal();
+  }
+
+  /* ── 点图看原图 ─────────────────────────────── */
+  function setupZoom() {
+    $$("figure.fig img", contentEl).forEach(function (img) {
+      img.addEventListener("click", function () { openLightbox(img); });
+    });
+  }
+
+  function openLightbox(img) {
+    var box = document.createElement("div");
+    box.className = "lightbox";
+
+    var big = document.createElement("img");
+    big.src = img.src;
+    big.alt = img.alt || "";
+
+    var hint = document.createElement("div");
+    hint.className = "lightbox-hint";
+    hint.textContent = "esc / click to close";
+
+    box.appendChild(big);
+    box.appendChild(hint);
+    document.body.appendChild(box);
+
+    function close() {
+      document.removeEventListener("keydown", onKey);
+      if (box.parentNode) box.parentNode.removeChild(box);
+    }
+    function onKey(e) { if (e.key === "Escape") close(); }
+
+    box.addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+  }
+
+  /* ── 章节锚点：给标题编号，导读里的链接平滑滚动 ── */
+  function setupToc() {
+    var counters = { H2: 0, H3: 0, H4: 0 };
+    var prefix = { H2: "s", H3: "t", H4: "u" };
+    $$("h2, h3, h4", contentEl).forEach(function (h) {
+      var p = prefix[h.tagName];
+      if (!p) return;
+      if (!h.id) h.id = p + (++counters[h.tagName]);
+    });
+
+    $$("[data-jump]", contentEl).forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var target = document.getElementById(a.getAttribute("data-jump"));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
   }
 
   /* ── 顶栏路径 ─────────────────────────────────── */
@@ -514,10 +569,13 @@
 
     // 事件
     setupSpotlight();
-    $("#themeBtn").addEventListener("click", toggleTheme);
-    $("#themeBtn2").addEventListener("click", toggleTheme);
-    $("#menuBtn").addEventListener("click", openDrawer);
-    scrim.addEventListener("click", closeDrawer);
+    var themeBtn = $("#themeBtn");
+    if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+    var themeBtn2 = $("#themeBtn2");
+    if (themeBtn2) themeBtn2.addEventListener("click", toggleTheme);
+    var menuBtn = $("#menuBtn");
+    if (menuBtn) menuBtn.addEventListener("click", openDrawer);
+    if (scrim) scrim.addEventListener("click", closeDrawer);
 
     mainEl.addEventListener("scroll", updateProgress, { passive: true });
 

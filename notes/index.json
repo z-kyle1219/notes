@@ -21,6 +21,25 @@
       ]
     },
     {
+      "title": "第三章 · 栈与队列",
+      "items": [
+        {
+          "id": "ds-stack-queue",
+          "num": "03",
+          "title": "栈与队列 · 知识点",
+          "file": "notes/03-stack-queue.md",
+          "difficulty": null
+        },
+        {
+          "id": "lc20",
+          "num": "0020",
+          "title": "有效的括号",
+          "file": "notes/lc-0020-valid-parentheses.md",
+          "difficulty": "easy"
+        }
+      ]
+    },
+    {
       "title": "哈希表 · 数组",
       "items": [
         {
@@ -28,18 +47,6 @@
           "num": "0001",
           "title": "两数之和",
           "file": "notes/lc-0001-two-sum.md",
-          "difficulty": "easy"
-        }
-      ]
-    },
-    {
-      "title": "栈",
-      "items": [
-        {
-          "id": "lc20",
-          "num": "0020",
-          "title": "有效的括号",
-          "file": "notes/lc-0020-valid-parentheses.md",
           "difficulty": "easy"
         }
       ]

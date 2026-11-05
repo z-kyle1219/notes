@@ -31,9 +31,12 @@ D:\leetcode\
 │  ├─ index.json         ← 目录清单，新增笔记要登记在这里
 │  ├─ 01-how-to-practice.md
 │  ├─ 02-complexity.md
+│  ├─ 03-stack-queue.md    第三章 栈与队列（知识点章，题接在同一组里）
 │  ├─ lc-0001-two-sum.md
 │  ├─ lc-0020-valid-parentheses.md
 │  └─ lc-0704-binary-search.md
+├─ 屏幕截图 2026-11-05 162718.png   第三章配图：中缀转后缀完整推演表
+├─ 屏幕截图 2026-11-05 162815.png   第三章配图：讲义三列演示
 ├─ start.ps1             本地预览
 ├─ new-note.ps1          新建笔记
 ├─ .nojekyll             告诉 GitHub Pages 别走 Jekyll 处理（别删）

@@ -1,6 +1,7 @@
-# 本地预览 LeetCode 笔记本
+﻿# 本地预览 LeetCode 笔记本
 # 用法：右键此文件 → 使用 PowerShell 运行
 # 停止：在这个窗口按 Ctrl+C
+# 注意：本文件必须以 UTF-8 with BOM 保存，否则 Windows PowerShell 5.1 会按 GBK 解码导致报错
 
 $ErrorActionPreference = 'Stop'
 Set-Location -LiteralPath $PSScriptRoot

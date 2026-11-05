@@ -823,3 +823,166 @@ body {
   .js .reveal, .js .reveal-clip { opacity: 1 !important; transform: none !important; }
   .caret { animation: none; }
 }
+
+/* ═══ 知识章节 ═══════════════════════════════════════════
+   章节导读 / 图示 / 提示块 —— 全部复用主题变量，
+   只新增组件，不改动上面任何既有规则。
+   ═══════════════════════════════════════════════════════ */
+
+.content h2,
+.content h3,
+.content h4 { scroll-margin-top: 72px; }
+
+/* ─── 章节导读 ─────────────────────────────────────── */
+.kmap {
+  margin: 2.2em 0 2.6em;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+.kmap-head {
+  padding: 10px 14px 9px;
+  border-bottom: 1px dashed var(--line);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.kmap ol { list-style: none; margin: 0; padding: 0; }
+.kmap li { margin: 0; }
+.kmap a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 0;
+  border-bottom: 1px dotted var(--line);
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-2);
+  transition: background .16s var(--ease), color .16s var(--ease);
+}
+.kmap li:last-child a { border-bottom: 0; }
+.kmap a:hover { background: var(--accent-soft); color: var(--ink); border-bottom-color: var(--line); }
+.kmap .n { flex: 0 0 auto; font-size: 10px; color: var(--accent); opacity: .8; }
+.kmap .s { flex: 1 1 auto; min-width: 0; }
+.kmap .d { flex: 0 0 auto; font-size: 9.5px; color: var(--ink-3); text-align: right; }
+
+/* ─── 图示 ─────────────────────────────────────────── */
+.content figure.fig {
+  margin: 2em 0 2.2em;
+  padding: 0;
+}
+.content figure.fig img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-2);
+  background: #fff;
+}
+.content figure.fig:hover img { border-color: var(--accent); }
+.content figcaption {
+  margin-top: 11px;
+  padding-left: 10px;
+  border-left: 2px solid var(--line-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.85;
+  letter-spacing: .02em;
+  color: var(--ink-3);
+}
+.content figcaption code {
+  font-size: .95em;
+  color: var(--accent);
+  background: transparent;
+  padding: 0;
+}
+
+/* ─── 提示块 ───────────────────────────────────────── */
+.callout {
+  position: relative;
+  margin: 1.9em 0;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background: var(--accent-soft);
+  font-size: 14.2px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+.callout > .t {
+  margin: 0 0 6px;
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.callout > .t::before { content: "▸ "; opacity: .7; }
+.callout p:last-child { margin-bottom: 0; }
+.callout code {
+  font-family: var(--mono);
+  font-size: .86em;
+  color: var(--accent);
+  background: var(--bg);
+  padding: .1em .36em;
+}
+.callout.warn {
+  border-left-color: var(--hard);
+  background: rgba(192, 57, 43, .07);
+}
+[data-theme="dark"] .callout.warn { background: rgba(255, 107, 122, .07); }
+.callout.warn > .t { color: var(--hard); }
+.callout.key { border-left-color: var(--medium); }
+.callout.key > .t { color: var(--medium); }
+
+/* ─── 图可破格、可点开看原图 ─────────────────────── */
+@media (min-width: 1180px) {
+  .content figure.fig { margin-left: -88px; margin-right: -88px; }
+}
+.content figure.fig img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 3vh 3vw;
+  background: rgba(2, 4, 6, .93);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  cursor: zoom-out;
+  animation: lbIn .22s var(--ease) both;
+}
+@keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+.lightbox img {
+  max-width: 100%;
+  max-height: 88vh;
+  border: 1px solid rgba(59, 255, 158, .32);
+  box-shadow: 0 0 90px -20px rgba(59, 255, 158, .35);
+  background: #fff;
+}
+.lightbox-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: .75;
+}
+
+/* ─── 移动端 ───────────────────────────────────────── */
+@media (max-width: 900px) {
+  .kmap .d { display: none; }
+  .content figcaption { font-size: 9.5px; }
+  .callout { font-size: 13.6px; padding: 13px 14px; }
+  .content h2, .content h3, .content h4 { scroll-margin-top: 62px; }
+}
+
