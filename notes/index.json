@@ -10,13 +10,6 @@
           "title": "栈与队列 · 知识点",
           "file": "notes/03-stack-queue.md",
           "difficulty": null
-        },
-        {
-          "id": "lc20",
-          "num": "0020",
-          "title": "有效的括号",
-          "file": "notes/lc-0020-valid-parentheses.md",
-          "difficulty": "easy"
         }
       ]
     }
