@@ -10,3 +10,6 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
+
+# 本地工具目录（记忆 / 缓存，不进仓库）
+.workbuddy/
