@@ -8,7 +8,7 @@ $notesDir = Join-Path $PSScriptRoot 'notes'
 $jsonPath = Join-Path $notesDir 'index.json'
 
 if (-not (Test-Path $jsonPath)) {
-    Write-Host '找不到 notes\index.json，请确认在 D:\leetcode 目录下运行。' -ForegroundColor Red
+    Write-Host '找不到 notes\index.json，请确认在笔记站根目录下运行。' -ForegroundColor Red
     Read-Host '按回车退出'; exit 1
 }
 

@@ -1,4 +1,4 @@
-﻿# 本地预览 LeetCode 笔记本
+﻿# 本地预览笔记站
 # 用法：右键此文件 → 使用 PowerShell 运行
 # 停止：在这个窗口按 Ctrl+C
 # 注意：本文件必须以 UTF-8 with BOM 保存，否则 Windows PowerShell 5.1 会按 GBK 解码导致报错
@@ -27,7 +27,7 @@ if (-not $python) {
 
 $url = "http://localhost:$port/"
 Write-Host ''
-Write-Host '  LeetCode 笔记本' -ForegroundColor Green
+Write-Host '  笔记站' -ForegroundColor Green
 Write-Host "  $url" -ForegroundColor Cyan
 Write-Host '  按 Ctrl+C 停止' -ForegroundColor DarkGray
 Write-Host ''

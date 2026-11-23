@@ -1,4 +1,4 @@
-/* LeetCode 笔记本 — 轻量静态文档站 */
+/* 笔记站 — 轻量静态文档站 */
 (function () {
   "use strict";
 
@@ -21,7 +21,7 @@
   var currentId = null;
 
   /* ── 主题 ─────────────────────────────────────────── */
-  var THEME_KEY = "leet.theme";
+  var THEME_KEY = "notes.theme";
 
   function applyTheme(t) {
     document.documentElement.setAttribute("data-theme", t);
@@ -251,7 +251,7 @@
       });
     }
 
-    document.title = (meta.title || item.title) + " · LeetCode 笔记本";
+    document.title = (meta.title || item.title) + " · 笔记";
 
     var kids = contentEl.children;
     for (var k = 0; k < kids.length; k++) {
@@ -324,7 +324,7 @@
     var parts = String(item.file).split("/");
     var file = parts.pop();
     var dir = parts.join("/");
-    crumb.innerHTML = "<span class=\"c-dim\">~/leetcode</span> / " +
+    crumb.innerHTML = "<span class=\"c-dim\">~/notes</span> / " +
       (dir ? '<span class="c-dim">' + esc(dir) + "</span> / " : "") +
       "<b>" + esc(file) + "</b>";
   }

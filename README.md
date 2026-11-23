@@ -1,14 +1,16 @@
-# LeetCode 笔记本
+# 笔记
 
-**在线地址：[https://z-kyle1219.github.io/leetcode/](https://z-kyle1219.github.io/leetcode/)**
+**在线地址：[https://z-kyle1219.github.io/notes/](https://z-kyle1219.github.io/notes/)**
 
-一个自己用的代码复习站：Markdown 写笔记，浏览器里读，推到 GitHub 就是公开网页。
+一个自己用的复习站：Markdown 写笔记，浏览器里读，推到 GitHub 就是公开网页。站点名是 `root@notes`。
 
 - 左侧目录、右侧正文，支持**全文搜索**（按 `/` 直接唤起）
-- 代码块带**语法高亮 + 一键复制**
-- 浅色 / 深色两套主题，跟随系统
+- 代码块带**语法高亮 + 一键复制**、行号槽
+- 浅色 / 深色两套主题，字符雨 + CRT 扫描线的终端观感
 - 手机上也能看
 - 不需要任何构建工具、不需要 Node.js，改完 md 刷新就是最新
+
+目前只保留**第三章 · 栈与队列**这一组内容（知识点章 + 配套题）。
 
 ---
 
@@ -21,7 +23,7 @@
 ## 二、目录结构
 
 ```text
-D:\leetcode\
+D:\my-notes\
 ├─ index.html            页面骨架（一般不用动）
 ├─ assets\
 │  ├─ style.css          全部样式，配色在文件最上面的变量里
@@ -29,14 +31,12 @@ D:\leetcode\
 │  └─ scene.js           背景字符雨（Canvas，无依赖）
 ├─ notes\
 │  ├─ index.json         ← 目录清单，新增笔记要登记在这里
-│  ├─ 01-how-to-practice.md
-│  ├─ 02-complexity.md
-│  ├─ 03-stack-queue.md    第三章 栈与队列（知识点章，题接在同一组里）
-│  ├─ lc-0001-two-sum.md
-│  ├─ lc-0020-valid-parentheses.md
-│  └─ lc-0704-binary-search.md
+│  ├─ 03-stack-queue.md              第三章 栈与队列（知识点章）
+│  └─ lc-0020-valid-parentheses.md   LC 20 有效的括号
 ├─ 屏幕截图 2026-11-05 162718.png   第三章配图：中缀转后缀完整推演表
 ├─ 屏幕截图 2026-11-05 162815.png   第三章配图：讲义三列演示
+├─ 栈与队列知识库.txt     第三章的原始素材（不参与站点渲染）
+├─ stack.cpp             练习代码（不参与站点渲染）
 ├─ start.ps1             本地预览
 ├─ new-note.ps1          新建笔记
 ├─ .nojekyll             告诉 GitHub Pages 别走 Jekyll 处理（别删）
@@ -62,10 +62,10 @@ D:\leetcode\
 
 ```markdown
 ---
-title: 三数之和
-difficulty: medium
-tags: [双指针, 数组]
-subtitle: LeetCode 15
+title: 用两个栈实现队列
+difficulty: easy
+tags: [栈, 队列]
+subtitle: 第 232 题
 ---
 ```
 
@@ -74,25 +74,23 @@ subtitle: LeetCode 15
 2. 在 `notes\index.json` 对应的 group 里加一条：
 
 ```json
-{ "id": "lc15", "num": "0015", "title": "三数之和", "file": "notes/lc-0015-three-sum.md", "difficulty": "medium" }
+{ "id": "lc232", "num": "0232", "title": "用两个栈实现队列", "file": "notes/lc-0232-implement-queue-using-stacks.md", "difficulty": "easy" }
 ```
 
 `id` 是 URL 里用的短标识，全站唯一；`file` 是相对 `index.html` 的路径。
 
 ## 四、发布与更新（已上线）
 
-站点已经托管在 GitHub Pages 上：
-
 | | |
 |---|---|
-| 在线地址 | https://z-kyle1219.github.io/leetcode/ |
-| 源码仓库 | https://github.com/z-kyle1219/leetcode |
+| 在线地址 | https://z-kyle1219.github.io/notes/ |
+| 源码仓库 | https://github.com/z-kyle1219/notes |
 | 发布分支 | `main`，目录 `/ (root)` |
 
 **日常更新就是三步**——改完笔记和 `notes\index.json` 后提交推送，Pages 会自动重新构建，一两分钟后线上就是新的：
 
 ```powershell
-cd D:\leetcode
+cd D:\my-notes
 git add .
 git commit -m "note: 新增 xxx"
 git push
@@ -119,6 +117,7 @@ git push
 - CRT 扫描线在 `.app::after`，不想要就把它整段删掉。
 - 代码块在两种主题下都是深色，语法色在 `--tk-key / --tk-str / --tk-fn` 那几个变量里。
 - 默认主题是深色。想改回跟随系统，把 `assets\app.js` 里 `var t = saved || "dark";` 换成 `saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")`。
+- 改了 `style.css` / `app.js` 之后，记得把 `index.html` 里对应的 `?v=` 数字加一（现在是 `v=10`），否则浏览器会继续用缓存里的旧文件。
 
 ## 六、状态标记
 
@@ -126,10 +125,10 @@ git push
 
 ```markdown
 ---
-title: 两数之和
+title: 有效的括号
 difficulty: easy
 status: passed
-tags: [哈希表, 数组]
+tags: [栈, 字符串]
 ---
 ```
 

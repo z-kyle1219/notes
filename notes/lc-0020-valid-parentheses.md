@@ -3,7 +3,7 @@ title: 有效的括号
 difficulty: easy
 status: passed
 tags: [栈, 字符串]
-subtitle: LeetCode 20 · 栈的第一道经典题
+subtitle: 第 20 题 · 栈的第一道经典题
 ---
 
 # 有效的括号
