@@ -12,6 +12,18 @@
           "difficulty": null
         }
       ]
+    },
+    {
+      "title": "计算机组织 · 手写笔记",
+      "items": [
+        {
+          "id": "co-handwritten-transcript",
+          "num": "CO",
+          "title": "手写笔记 · 原文转录稿",
+          "file": "notes/co-handwritten-transcript.md",
+          "difficulty": null
+        }
+      ]
     }
   ]
 }
