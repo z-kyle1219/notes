@@ -162,6 +162,9 @@ body {
   letter-spacing: .06em;
   margin-top: 5px;
 }
+.brand-link { display: block; text-decoration: none; }
+.brand-link:hover .brand-prompt { text-shadow: 0 0 18px var(--accent); }
+.brand-link:hover .brand-sub { color: var(--accent); opacity: .8; }
 
 .nav {
   flex: 1;
