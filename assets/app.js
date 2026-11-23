@@ -563,7 +563,7 @@
       .catch(function (err) {
         contentEl.innerHTML =
           '<div class="state"><h2>目录没读到</h2>' +
-          "<p>确认 <code>notes/index.json</code> 存在，并且你是通过本地服务或 GitHub Pages 访问的。<br />直接双击打开 index.html 时，浏览器会拦截读取本地文件。</p>" +
+          "<p>确认 <code>notes/index.json</code> 存在，并且你是通过本地服务或 GitHub Pages 访问的。<br />直接双击打开 read.html 时，浏览器会拦截读取本地文件。</p>" +
           '<p style="margin-top:16px;font-size:12px;opacity:.7">' + esc(String(err.message || err)) + "</p></div>";
       });
 

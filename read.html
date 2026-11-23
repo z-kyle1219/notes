@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark" class="no-js">
+<head>
+<meta charset="utf-8" />
+<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>root@notes:~</title>
+<meta name="description" content="个人笔记 · 数据结构与算法知识点整理。" />
+<meta name="theme-color" content="#030508" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23030508'/><rect x='8' y='9' width='3' height='14' fill='%233BFF9E'/><rect x='14' y='9' width='3' height='6' fill='%233BFF9E'/><rect x='20' y='9' width='3' height='6' fill='%233BFF9E'/><rect x='14' y='18' width='9' height='3' fill='%233BFF9E'/></svg>" />
+<link rel="stylesheet" href="assets/style.css?v=12" />
+</head>
+<body>
+<div class="app">
+
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <a class="brand-link" href="index.html" title="返回首页">
+        <div class="brand-prompt">root@notes</div>
+        <div class="brand-sub">:~$ ./notes</div>
+      </a>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <span id="docCount">—</span>
+      <span class="caret">▊</span>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+
+  <main class="main" id="main">
+    <header class="topbar">
+      <button class="icon-btn only-mobile" id="menuBtn" aria-label="打开目录">☰</button>
+      <div class="crumb" id="crumb"></div>
+      <div class="search">
+        <span class="search-icon">&gt;</span>
+        <input id="search" type="search" placeholder="grep ..." autocomplete="off" spellcheck="false" />
+        <kbd class="kbd">/</kbd>
+        <div class="search-panel" id="searchPanel" hidden></div>
+      </div>
+      <button class="icon-btn" id="themeBtn" aria-label="切换主题"></button>
+    </header>
+
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+    <article class="content" id="content"></article>
+
+    <footer class="foot">
+      <span>-- markdown / github --</span>
+      <span class="build">BUILD v10</span>
+    </footer>
+  </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+<script src="assets/scene.js?v=8"></script>
+<script src="assets/app.js?v=11"></script>
+</body>
+</html>

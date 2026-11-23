@@ -18,7 +18,7 @@ foreach ($cmd in @('python', 'py', 'python3')) {
 if (-not $python) {
     Write-Host ''
     Write-Host '  没找到可用的 Python。' -ForegroundColor Yellow
-    Write-Host '  可以改用 VS Code 的 Live Server 插件打开 index.html，' -ForegroundColor DarkGray
+    Write-Host '  可以改用 VS Code 的 Live Server 插件打开 read.html，' -ForegroundColor DarkGray
     Write-Host '  或者直接把这个仓库推到 GitHub Pages 在线阅读。' -ForegroundColor DarkGray
     Write-Host ''
     Read-Host '按回车退出'

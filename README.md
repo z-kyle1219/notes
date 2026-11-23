@@ -18,22 +18,27 @@
 
 双击 **`start.ps1`**（右键 → 使用 PowerShell 运行），浏览器会自动打开预览页；改完 md 刷新即可看到最新内容。
 
-> 别直接双击 `index.html`：浏览器不允许 `file://` 页面读取本地 `.md`，会提示读不到笔记。
+> 别直接双击 `read.html`：浏览器不允许 `file://` 页面读取本地 `.md`，会提示读不到笔记。
 
 ## 二、目录结构
 
 ```text
 D:\my-notes\
-├─ index.html            页面骨架（一般不用动）
+├─ index.html            首页：hero + 藏书目录（点网址先看到这个）
+├─ read.html             阅读页骨架（正文、搜索、主题，一般不用动）
 ├─ assets\
-│  ├─ style.css          全部样式，配色在文件最上面的变量里
-│  ├─ app.js             渲染、搜索、主题切换
+│  ├─ style.css          阅读页样式，配色在文件最上面的变量里
+│  ├─ app.js             阅读页渲染、搜索、主题切换
+│  ├─ home.css           首页样式
+│  ├─ home.js            首页：实时状态、索引、快捷键
 │  └─ scene.js           背景字符雨（Canvas，无依赖）
 ├─ notes\
 │  ├─ index.json         ← 目录清单，新增笔记要登记在这里
-│  └─ 03-stack-queue.md  第三章 栈与队列（知识点章）
+│  ├─ 03-stack-queue.md            第三章 栈与队列（知识点章）
+│  └─ co-handwritten-transcript.md 计算机组织 手写笔记转录稿
 ├─ 屏幕截图 2026-11-05 162718.png   第三章配图：中缀转后缀完整推演表
 ├─ 屏幕截图 2026-11-05 162815.png   第三章配图：讲义三列演示
+├─ assets\note_p2_flow.png          转录稿配图：取指 → 执行 → 检查中断
 ├─ 栈与队列知识库.txt     第三章的原始素材（不参与站点渲染）
 ├─ stack.cpp             练习代码（不参与站点渲染）
 ├─ start.ps1             本地预览
@@ -76,7 +81,7 @@ subtitle: 第 232 题
 { "id": "lc232", "num": "0232", "title": "用两个栈实现队列", "file": "notes/lc-0232-implement-queue-using-stacks.md", "difficulty": "easy" }
 ```
 
-`id` 是 URL 里用的短标识，全站唯一；`file` 是相对 `index.html` 的路径。
+`id` 是 URL 里用的短标识，全站唯一；`file` 是相对 `read.html` 的路径。
 
 ## 四、发布与更新（已上线）
 
@@ -116,7 +121,7 @@ git push
 - CRT 扫描线在 `.app::after`，不想要就把它整段删掉。
 - 代码块在两种主题下都是深色，语法色在 `--tk-key / --tk-str / --tk-fn` 那几个变量里。
 - 默认主题是深色。想改回跟随系统，把 `assets\app.js` 里 `var t = saved || "dark";` 换成 `saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")`。
-- 改了 `style.css` / `app.js` 之后，记得把 `index.html` 里对应的 `?v=` 数字加一（现在是 `v=10`），否则浏览器会继续用缓存里的旧文件。
+- 改了 `style.css` / `app.js` 之后，记得把 `read.html` 里对应的 `?v=` 数字加一（现在是 `v=11`），否则浏览器会继续用缓存里的旧文件。
 
 ## 六、状态标记
 

@@ -150,7 +150,7 @@
         if (it.tags && it.tags.length) {
           tags = it.tags.map(function (t) { return "#" + t; }).join(" ");
         }
-        html += '<a class="idx-row" href="index.html#/' + encodeURIComponent(it.id) + '" data-id="' + esc(it.id) + '">' +
+        html += '<a class="idx-row" href="read.html#/' + encodeURIComponent(it.id) + '" data-id="' + esc(it.id) + '">' +
           '<span class="r-num">' + esc(it.num || "—") + "</span>" +
           '<span class="r-main">' +
             '<span class="r-title">' + esc(it.title) + "</span>" +
@@ -253,7 +253,7 @@
         typeText($("#cmdText"), "cat ./" + (flat[0] ? flat[0].file : "notes/"));
 
         var cta = $("#ctaMain");
-        if (cta && flat[0]) cta.setAttribute("href", "index.html#/" + encodeURIComponent(flat[0].id));
+        if (cta && flat[0]) cta.setAttribute("href", "read.html#/" + encodeURIComponent(flat[0].id));
 
         hydrate(flat);
       });
@@ -267,7 +267,7 @@
         toggleTheme();
       } else if (e.key === "Enter" && document.activeElement === document.body && flat.length) {
         e.preventDefault();
-        location.href = "index.html#/" + encodeURIComponent(flat[0].id);
+        location.href = "read.html#/" + encodeURIComponent(flat[0].id);
       }
     });
   }
