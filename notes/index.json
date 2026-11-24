@@ -26,6 +26,18 @@
       ]
     },
     {
+      "title": "测试",
+      "items": [
+        {
+          "id": "testing",
+          "num": "T",
+          "title": "测试 · 文档规范",
+          "file": "notes/testing.md",
+          "difficulty": null
+        }
+      ]
+    },
+    {
       "title": "计算机组织 · 手写笔记",
       "items": [
         {
