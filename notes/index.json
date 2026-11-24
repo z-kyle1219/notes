@@ -2,6 +2,18 @@
   "title": "笔记",
   "groups": [
     {
+      "title": "随笔",
+      "items": [
+        {
+          "id": "essay-ice-plum",
+          "num": "01",
+          "title": "坚冰覆北海，我心如盛梅",
+          "file": "notes/essay-ice-plum.md",
+          "difficulty": null
+        }
+      ]
+    },
+    {
       "title": "第三章 · 栈与队列",
       "items": [
         {
