@@ -504,6 +504,11 @@ body {
   font-weight: 400;
 }
 
+/* 小节编号从 02 起：01 位留给本章尚未写入的一节 */
+.content h2.sec-02 {
+  counter-reset: sec 1;
+}
+
 .content h3 {
   font-size: 14.5px;
   font-weight: 600;
