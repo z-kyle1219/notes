@@ -1016,6 +1016,42 @@ body {
 .content .pagemark + h2 { margin-top: 1.1em; }
 .content > .pagemark:first-of-type { margin-top: 30px; border-top: 0; padding-top: 0; }
 
+/* ─── 随笔：结尾题记与落款 ───────────────────────── */
+.content ol > li + li { margin-top: .85em; }
+
+/* 随笔版式：标题居中、正文首行缩进两格 */
+.content h1.essay-title { text-align: center; }
+.content h1.essay-title + p { text-indent: 2em; }
+
+.content .verse {
+  margin: 2.4em 0 1.1em;
+  text-align: center;
+  font-size: 15px;
+  line-height: 2.05;
+  letter-spacing: .05em;
+  color: var(--ink-2);
+}
+.content .verse::before,
+.content .verse::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  margin: 0 auto;
+  background: var(--line-2);
+}
+.content .verse::before { margin-bottom: 24px; }
+.content .verse::after { margin-top: 24px; }
+
+.content .sign {
+  margin: 0;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: var(--ink-3);
+}
+
 /* ─── 移动端 ───────────────────────────────────────── */
 @media (max-width: 900px) {
   .kmap .d { display: none; }
