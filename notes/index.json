@@ -55,6 +55,13 @@
           "title": "set · 知识点",
           "file": "notes/py6-set.md",
           "difficulty": null
+        },
+        {
+          "id": "py7-function",
+          "num": "PY7",
+          "title": "function · 知识点",
+          "file": "notes/py7-function.md",
+          "difficulty": null
         }
       ]
     },
