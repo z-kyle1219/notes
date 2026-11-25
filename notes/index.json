@@ -34,6 +34,13 @@
           "title": "list · 知识点",
           "file": "notes/py3-list.md",
           "difficulty": null
+        },
+        {
+          "id": "py4-tuple",
+          "num": "PY4",
+          "title": "tuple · 知识点",
+          "file": "notes/py4-tuple.md",
+          "difficulty": null
         }
       ]
     },
