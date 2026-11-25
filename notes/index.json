@@ -48,6 +48,13 @@
           "title": "dict · 知识点",
           "file": "notes/py5-dict.md",
           "difficulty": null
+        },
+        {
+          "id": "py6-set",
+          "num": "PY6",
+          "title": "set · 知识点",
+          "file": "notes/py6-set.md",
+          "difficulty": null
         }
       ]
     },
