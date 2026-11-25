@@ -26,6 +26,18 @@
       ]
     },
     {
+      "title": "Python 基础",
+      "items": [
+        {
+          "id": "py3-list",
+          "num": "PY3",
+          "title": "list · 知识点",
+          "file": "notes/py3-list.md",
+          "difficulty": null
+        }
+      ]
+    },
+    {
       "title": "测试",
       "items": [
         {
