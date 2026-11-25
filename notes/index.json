@@ -41,6 +41,13 @@
           "title": "tuple · 知识点",
           "file": "notes/py4-tuple.md",
           "difficulty": null
+        },
+        {
+          "id": "py5-dict",
+          "num": "PY5",
+          "title": "dict · 知识点",
+          "file": "notes/py5-dict.md",
+          "difficulty": null
         }
       ]
     },
