@@ -66,6 +66,25 @@
       ]
     },
     {
+      "title": "HTTP 协议",
+      "items": [
+        {
+          "id": "http-overview",
+          "num": "01",
+          "title": "HTTP协议",
+          "file": "notes/http-overview.md",
+          "difficulty": null
+        },
+        {
+          "id": "http-request-response",
+          "num": "01.1",
+          "title": "Request & Response",
+          "file": "notes/http-request-response.md",
+          "difficulty": null
+        }
+      ]
+    },
+    {
       "title": "测试",
       "items": [
         {
