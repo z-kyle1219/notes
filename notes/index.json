@@ -29,6 +29,13 @@
       "title": "Python 基础",
       "items": [
         {
+          "id": "py1-variable",
+          "num": "PY1",
+          "title": "variable · 知识点",
+          "file": "notes/py1-variable.md",
+          "difficulty": null
+        },
+        {
           "id": "py2-operator",
           "num": "PY2",
           "title": "operator · 知识点",
