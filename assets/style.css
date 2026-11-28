@@ -680,6 +680,14 @@ body {
   tab-size: 4;
 }
 
+/* 关掉编程字体的连字：!= 要显示成 !=，不能渲染成 ≠；>= 同理 */
+.content :not(pre) > code,
+.content pre code,
+.code-gutter {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
 /* ─── 语法高亮 ─────────────────────────────────────────── */
 .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-doctag { color: var(--tk-key); }
 .hljs-string, .hljs-regexp, .hljs-addition { color: var(--tk-str); }
