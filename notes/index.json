@@ -29,6 +29,13 @@
       "title": "Python 基础",
       "items": [
         {
+          "id": "py2-operator",
+          "num": "PY2",
+          "title": "operator · 知识点",
+          "file": "notes/py2-operator.md",
+          "difficulty": null
+        },
+        {
           "id": "py3-list",
           "num": "PY3",
           "title": "list · 知识点",
